@@ -25,6 +25,8 @@
 
     $scope.separateLunchItems = function() {
       return $scope.lunch
+        .split(' ')
+        .join('')
         .split(',')
         .filter(function(item) {
           return item != '' && item != ' ';
