@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="./angular.min.js"></script>
+    <script src="./app.js"></script>
+    <title>Lunch Checker</title>
+    <style>
+      h1 {
+        margin-top: 5rem;
+        margin-bottom: 0;
+      }
+
+      h5 {
+        margin-top: .5rem;
+        margin-bottom: 8rem;
+      }
+
+      .btn, .btn:hover, .btn:focus {
+        margin-top: 10px;
+        background-color: #9191ff;
+        color: white;
+      }
+
+      .alert {
+        margin-top: -5rem;
+        margin-bottom: 1rem;
+        padding: 12px 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div ng-controller="LunchCheckController" class="container">
+      <h1>Lunch Checker</h1>
+      <h5>Important: We do not consider whitespace</h5>
+      <p 
+        role="alert" 
+        class="alert alert-info" 
+        ng-if="message" 
+        ng-bind="message">
+      </p>
+      <input 
+        type="text" 
+        ng-model="lunch" 
+        class="form-control"
+        placeholder="list comma separated dishes you usually have for lunch">
+      <button
+        type="button"
+        class="btn"
+        ng-click="checkIfTooMuch()">
+        Check If Too Much
+      </button>
+    </div>
+  </body>
+</html>
